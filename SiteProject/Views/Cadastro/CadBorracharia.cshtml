@@ -1,0 +1,314 @@
+﻿@model List<SiteProject.Models.Dados_Borracharia>
+@{ 
+    ViewBag.Title = "Borracharia";
+}
+
+<style> /* CONFIGURAÇÃO VISUAL DAS TABELAS E BOTÕES*/
+    #grid_cadastro > thead > tr th:nth-child(2) {
+        width: 110px;
+    }
+
+    #grid_cadastro > thead > tr th:nth-child(3) {
+        width: 200px;
+    }
+
+    #oficina {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #cadastro_borracharia {
+        border-bottom: 1px #dddddd solid;
+    }
+
+    #br_dados {
+        margin-top: 20px;
+    }
+
+    #cabecalho-grid {
+        margin-bottom: 20px
+    }
+</style>
+
+<div id="oficina">
+    <section id="cadastro_borracharia">
+        <h3>@ViewBag.Title</h3>
+    </section>
+    <section id="br_dados">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div id="cabecalho-grid" class="row">
+                        <div class="col-md-12">
+                        <a class="btn btn-primary btn-success btn-incluir" role="button"><i class="glyphicon glyphicon-plus"></i>Incluir</a>
+                        <!--<a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                        <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>                        
+                        <br /> -->
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="grid_cadastro" class="table table-bordered table-striped table-hover">                               
+                                <thead>
+                                    <tr>                                        
+                                        <th>Razão Social</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.rsocial</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <!--</table>
+                                <table id="grid_cadastro" class="table table-bordered table-striped table-hover">-->
+                                <thead>
+                                    <tr>
+                                        <th>Nome Fantasia</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.nomefant</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>CNPJ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.CNPJ</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>E-mail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.email</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Endereço (Logradouro e Número)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.endereco</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.estado</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Telefone (Com DDD)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.tel</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Data de Cadastro</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.datacad</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Status (Ativo ou Inativo)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.status</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Agência do Banco</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.ag</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Conta do Banco</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var br in Model)
+                                    {
+                                        <tr>
+                                            <td>@br.cc</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                                <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div id="modal_cadastro" class="form-horizontal invisivel" role="dialog">
+    <fieldset>
+        <div class="row">
+            <div class="form-group">
+                @Html.Label("txt_nome", "Nome", new { @class = "col-md-3 control-label" })
+                <div class="col-md-12">
+                    @Html.TextBox("txt_nome", null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("cbx_ativo", "Ativo", new { @class = "col-md-3 control-label" })
+                <div class="col-md-12">
+                    @Html.CheckBox("cbx_ativo")
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="modal-footer">
+                        <a id="btn_sair" class="btn btn-default" role="button" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i>Sair</a>
+                        <a id="btn_confirmar" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-ok"></i>Salvar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+@section Scripts{ <!--FUNCIONALIDADE DOS BOTÕES COM JQUERY -->
+    <script>
+        function abrir_form(dados) {
+
+            $('#txt_nome').val(dados.Nome);
+
+            var modal_cadastro = $('#modal_cadastro')
+
+            bootbox.dialog({
+                title: '@ViewBag.Title',
+                message: modal_cadastro
+            })
+            element.on('shown.bs.modal', function () {
+                message: modal_cadastro.show(0, function () {
+                    $('#txt_nome').focus();
+
+                });
+                element.on('hidden.bs.modal', function () {
+                    message: modal_cadastro.hide().appendTo('body');
+                })
+            });
+
+        $(document).on('click' , '.btn-incluir', function () {
+
+        })
+        $(document).on('click', '.btn-alterar', function () {
+            $.post(url, param, function () {
+                if (response) {
+
+                }
+            });
+        $(document).on('click', '.btn-excluir', function () {
+            alert('3');
+        })
+    </script>
+    }
